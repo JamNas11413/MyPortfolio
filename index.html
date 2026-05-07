@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Engineer | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #38bdf8, #818cf8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .section-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .blob {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(to right, #0ea5e9, #6366f1);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0.2;
+            animation: move 20s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(100px, 100px); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- Background Blobs -->
+    <div class="blob top-20 left-10"></div>
+    <div class="blob bottom-20 right-10" style="animation-delay: -5s;"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <p><a href="£" class="text-xl font-bold tracking-tighter">Jamal's <span class="text-sky-400">Portfolio</span></a></p>
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#home" class="hover:text-sky-400 transition">Home</a>
+                <a href="#about" class="hover:text-sky-400 transition">About</a>
+                <a href="#projects" class="hover:text-sky-400 transition">Projects</a>
+                <a href="#contact" class="px-4 py-2 bg-sky-500 hover:bg-sky-600 rounded-full transition">Let's Talk</a>
+            </div>
+            <button class="md:hidden text-2xl" id="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed top-16 left-0 w-full bg-slate-900/95 backdrop-blur-md border-b border-white/10 hidden md:hidden opacity-0 transform -translate-y-2 pointer-events-none transition-all duration-300 ease-out z-40">
+        <div class="max-w-6xl mx-auto px-6 py-8 space-y-4">
+            <a href="#home" class="block px-4 py-3 text-slate-300 hover:text-sky-400 hover:bg-white/5 rounded-lg transition duration-200" onclick="closeMobileMenu()">Home</a>
+            <a href="#about" class="block px-4 py-3 text-slate-300 hover:text-sky-400 hover:bg-white/5 rounded-lg transition duration-200" onclick="closeMobileMenu()">About</a>
+            <a href="#projects" class="block px-4 py-3 text-slate-300 hover:text-sky-400 hover:bg-white/5 rounded-lg transition duration-200" onclick="closeMobileMenu()">Projects</a>
+            <a href="#contact" class="block px-4 py-3 bg-sky-500 text-white hover:bg-sky-600 rounded-lg font-bold transition duration-200 text-center" onclick="closeMobileMenu()">Let's Talk</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center pt-20 px-6">
+        <div class="max-w-4xl mx-auto text-center md:text-left">
+            <p class="text-sky-400 font-mono mb-4">Hi, I am</p>
+            <h1 class="text-5xl md:text-8xl font-bold mb-6 tracking-tight">
+                Jamal <span class="gradient-text">Nasar.</span>
+            </h1>
+            <h2 class="text-3xl md:text-5xl font-semibold text-slate-400 mb-8 leading-tight">
+                Software Engineer & Full Stack Developer.
+            </h2>
+            <p class="max-w-xl text-slate-400 text-lg mb-10">
+                I specialize in building (and occasionally designing) exceptional digital experiences. Currently, I’m focused on building accessible, human-centered products.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <a href="#projects" class="px-8 py-4 bg-sky-500 rounded-lg font-bold hover:bg-sky-600 transition shadow-lg shadow-sky-500/20">View My Work</a>
+                <a href="#contact" class="px-8 py-4 border border-slate-700 rounded-lg font-bold hover:bg-white/5 transition">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Skills -->
+    <section id="about" class="py-24 px-6 section-reveal">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h3 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="text-sky-400 mr-2 font-mono text-xl">01.</span> About Me
+                </h3>
+                <div class="text-slate-400 space-y-4">
+                    <section class="max-w-4xl mx-auto py-12 px-6 font-sans text-gray-800 dark:text-gray-200">
+                <!-- Header Section -->
+                        <div class="mb-8">
+                        
+                            <div class="h-1 w-20 bg-blue-600 rounded"></div>
+                        </div>
+
+                        <!-- Content Section -->
+                        <div class="space-y-6 leading-relaxed text-lg">
+                        <p>
+                        Hello! My journey into the world of software engineering began in 2022. At the time, I was a high school student venturing into the unknown, where I wrote my very first line of code: 
+                        <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded text-pink-600 font-mono text-base">print("Hello World!")</code> in Python.
+                        </p>
+
+                        <p>
+                        What started as a simple curiosity quickly evolved into a profound passion. As I began exploring the intricacies of web development and the broader landscape of software architecture, I had a definitive realization: 
+                        <span class="font-semibold text-blue-600 dark:text-blue-400 text-xl italic">"I was built for this."</span>
+                        </p>
+
+                        <p>
+                        Driven by a natural aptitude for logic and a relentless desire to learn, I have transitioned from a curious student to a focused 
+                        <span class="font-medium underline decoration-blue-500/30 underline-offset-4">Software Engineer</span> 
+                        has been driven by a relentless desire to learn and a natural aptitude for logical problem-solving.
+                        </p>
+
+                        <p class="pt-4 border-t border-gray-200 dark:border-gray-700">
+                        Today, I am committed to pushing the boundaries of what’s possible on the web, constantly refining my craft and staying at the forefront of modern technology.
+                        </p> <br>
+                        <a href="Resume.pdf" target="_blank"
+                        class="group flex justify-center items-center px-8 py-4 border border-slate-700 rounded-lg font-bold hover:bg-white/5 transition text-center text-white">
+                        
+                        <span class="group-hover:bg-gradient-to-r group-hover:from-[#38bdf8] group-hover:to-[#818cf8] group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                            My journey so far
+                        </span>
+
+                        </a>
+                    </div>
+                    </section>
+                    <p>
+                        Fast-forward to today, and I am currently seeking opportunities to apply my passion for scalable architecture to real-world projects and grow alongside industry leaders.
+                    </p>
+
+                    <p>Here are a few technologies I’ve been working with recently:</p>
+                    <ul class="grid grid-cols-2 gap-2 text-sm font-mono text-sky-400">
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>JavaScript (ES6+)</li>
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>React / Next.js</li>
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>Node.js</li>
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>TypeScript</li>
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>PostgreSQL</li>
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>Tailwind CSS</li>
+                        <li><i class="fa-solid fa-caret-right mr-2"></i>Python</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative group">
+                <div class="w-full aspect-square rounded-2xl border-2 border-sky-400/50 translate-x-4 translate-y-4 absolute inset-0 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform"></div>
+                <div class="w-full aspect-square bg-slate-800 rounded-2xl overflow-hidden grayscale hover:grayscale-0 transition duration-500 cursor-pointer">
+                    <img src="me.jpeg" alt="Profile" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 section-reveal">
+        <div class="max-w-6xl mx-auto">
+            <h3 class="text-3xl font-bold mb-12 flex items-center">
+                <span class="text-sky-400 mr-2 font-mono text-xl">02.</span> Selected Projects
+            </h3>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="glass p-8 rounded-3xl group hover:-translate-y-2 transition duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-regular fa-folder text-4xl text-sky-400"></i>
+                        <div class="flex space-x-4 text-xl text-slate-300">
+                            <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="hover:text-sky-400"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 group-hover:text-sky-400 transition">E-Commerce Cloud Platform</h4>
+                    <p class="text-slate-400 mb-6">
+                        A full-stack commerce engine supporting multi-currency transactions, automated inventory management, and a custom dashboard.
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-500">
+                        <span>React</span>
+                        <span>Node.js</span>
+                        <span>AWS</span>
+                        <span>Stripe</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="glass p-8 rounded-3xl group hover:-translate-y-2 transition duration-300">
+                    <div class="flex justify-between items-start mb-6">
+                        <i class="fa-regular fa-folder text-4xl text-sky-400"></i>
+                        <div class="flex space-x-4 text-xl text-slate-300">
+                            <a href="#" class="hover:text-sky-400"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="hover:text-sky-400"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        </div>
+                    </div>
+                    <h4 class="text-2xl font-bold mb-4 group-hover:text-sky-400 transition">AI Code Assistant</h4>
+                    <p class="text-slate-400 mb-6">
+                        A real-time IDE plugin that leverages LLMs to provide context-aware refactoring suggestions and security audits.
+                    </p>
+                    <div class="flex flex-wrap gap-3 text-xs font-mono text-slate-500">
+                        <span>Python</span>
+                        <span>TensorFlow</span>
+                        <span>VS Code API</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 px-6 section-reveal">
+        <div class="max-w-2xl mx-auto text-center">
+            <p class="text-sky-400 font-mono mb-4">03. What's Next?</p>
+            <h3 class="text-5xl font-bold mb-6">Get In Touch</h3>
+            <p class="text-slate-400 mb-10 text-lg">
+            <span class="font-semibold text-blue-600 dark:text-blue-400 text-xl italic">"Let’s build something extraordinary together." </span> <br>
+
+Whether you have a specific project in mind, a freelance opportunity, or a full-time role that needs a fresh perspective—I’m all ears. I’m currently focused on web development, but I’m always looking for the next big challenge. Reach out with your ideas, and let’s see how we can make them a reality!
+            </p>
+            <div class="relative inline-block text-left">
+    <button onclick="toggleContactMenu()" id="contact-trigger" class="px-10 py-5 border-2 border-sky-400 text-sky-400 rounded-lg font-bold hover:bg-sky-400/10 transition flex items-center gap-2">
+        Say Hello
+        <svg id="arrow-icon" class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    </button>
+
+  <div id="contact-menu" class="hidden absolute bottom-full mb-4 left-0 w-64 bg-slate-900 border border-slate-700 rounded-xl shadow-2xl overflow-hidden transform transition-all scale-95 opacity-0 origin-bottom">
+    
+    <a href="https://wa.me/+923431785493" target="_blank" class="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition border-b border-slate-800 group">
+        <img src="https://img.icons8.com/3d-fluency/94/whatsapp.png" alt="WhatsApp" class="w-10 h-10 group-hover:scale-110 transition-transform">
+        <div class="flex flex-col text-left">
+            <span class="text-white font-bold text-sm">WhatsApp</span>
+            <span class="text-slate-400 text-xs text-nowrap">Chat with me instantly</span>
+        </div>
+    </a>
+
+    <a href="mailto:jamalnasarconnect@gmail.com" class="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition group">
+        <img src="https://img.icons8.com/3d-fluency/94/mail.png" alt="Email" class="w-10 h-10 group-hover:scale-110 transition-transform">
+        <div class="flex flex-col text-left">
+            <span class="text-white font-bold text-sm">Email</span>
+            <span class="text-slate-400 text-xs text-nowrap">jamalnasarconnect@gmail.com</span>
+        </div>
+    </a>
+</div>
+
+<script>
+function toggleContactMenu() {
+    const menu = document.getElementById('contact-menu');
+    const arrow = document.getElementById('arrow-icon');
+    
+    if (menu.classList.contains('hidden')) {
+        // Show Menu
+        menu.classList.remove('hidden');
+        setTimeout(() => {
+            menu.classList.remove('scale-95', 'opacity-0');
+            menu.classList.add('scale-100', 'opacity-100');
+        }, 10);
+        arrow.style.transform = 'rotate(180deg)';
+    } else {
+        // Hide Menu
+        menu.classList.remove('scale-100', 'opacity-100');
+        menu.classList.add('scale-95', 'opacity-0');
+        setTimeout(() => menu.classList.add('hidden'), 200);
+        arrow.style.transform = 'rotate(0deg)';
+    }
+}
+
+// Optional: Close menu if user clicks anywhere else
+window.onclick = function(event) {
+    if (!event.target.closest('#contact-trigger') && !event.target.closest('#contact-menu')) {
+        const menu = document.getElementById('contact-menu');
+        if (!menu.classList.contains('hidden')) toggleContactMenu();
+    }
+}
+</script>
+            
+            <div class="mt-20 flex justify-center space-x-8 text-2xl text-slate-500">
+                <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-sky-400 transition"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-8 text-center text-slate-500 text-sm font-mono">
+        <p>Built with ❤️ & Tailwind CSS by Jamal</p>
+    </footer>
+
+    <script>
+        // Reveal sections on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section-reveal').forEach(section => {
+            observer.observe(section);
+        });
+
+        let menuOpen = false;
+
+        // Professional Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            if (!menuOpen) {
+                // Show menu
+                menu.classList.remove('hidden', 'pointer-events-none');
+                setTimeout(() => {
+                    menu.classList.remove('opacity-0', '-translate-y-2');
+                    menu.classList.add('opacity-100', 'translate-y-0');
+                }, 10);
+                btn.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                menuOpen = true;
+            } else {
+                closeMobileMenu();
+            }
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            menu.classList.add('opacity-0', '-translate-y-2');
+            menu.classList.remove('opacity-100', 'translate-y-0');
+            setTimeout(() => {
+                menu.classList.add('hidden', 'pointer-events-none');
+                btn.innerHTML = '<i class="fa-solid fa-bars-staggered"></i>';
+            }, 5000);
+            menuOpen = false;
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const menu = document.getElementById('mobile-menu');
+            const btn = document.getElementById('mobile-menu-btn');
+            
+            if (menuOpen && !menu.contains(e.target) && !btn.contains(e.target)) {
+                closeMobileMenu();
+            }
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                closeMobileMenu();
+            });
+        });
+    </script>
+</body>
+</html>
